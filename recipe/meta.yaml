@@ -1,6 +1,6 @@
 {% set name = "perl-yaml-libyaml" %}
-{% set version = "0.85" %}
-{% set sha256 = "c13aee832d50a6e5ebb3ba64595584827e6d9280f85d4951998e3f2c1f16604c" %}
+{% set version = "0.86" %}
+{% set sha256 = "b139675326591c95d2e431be8d8dd13fd87080b5826716de99879fc5e614f9d8" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true   # [win]
+  skip: true  # [win]
   number: 0
   run_exports:
     weak:
@@ -37,7 +37,7 @@ about:
   license_file:
     - {{ environ["PREFIX"] }}/man/man1/perlartistic.1
     - {{ environ["PREFIX"] }}/man/man1/perlgpl.1
-  summary: 'Perl YAML Serialization using XS and libyaml'
+  summary: Perl YAML Serialization using XS and libyaml
 
 extra:
   recipe-maintainers:
