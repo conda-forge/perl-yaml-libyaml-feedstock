@@ -1,11 +1,22 @@
+About perl-yaml-libyaml-feedstock
+=================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/perl-yaml-libyaml-feedstock/blob/main/LICENSE.txt)
+
 About perl-yaml-libyaml
-=======================
+-----------------------
 
 Home: https://github.com/ingydotnet/yaml-libyaml-pm
 
 Package license: GPL-1.0-or-later OR Artistic-1.0-Perl
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/perl-yaml-libyaml-feedstock/blob/main/LICENSE.txt)
+Summary: Perl YAML Serialization using XS and libyaml
+About perl-yaml-libyaml
+-----------------------
+
+Home: https://github.com/ingydotnet/yaml-libyaml-pm
+
+Package license: GPL-1.0-or-later OR Artistic-1.0-Perl
 
 Summary: Perl YAML Serialization using XS and libyaml
 
