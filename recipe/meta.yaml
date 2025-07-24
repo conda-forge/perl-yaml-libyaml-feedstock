@@ -1,18 +1,18 @@
 {% set name = "perl-yaml-libyaml" %}
-{% set version = "0.88" %}
-{% set sha256 = "a8a2738cccc332a8f7549c4c27f3e0090c9ab11eef0f6c856445177398135678" %}
+{% set version = "0.904.0" %}
+{% set sha256 = "b656b0b11a4219c125679e8cbf7436a3f636e833fd63cf322d171dcb7c3eaf3e" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://cpan.metacpan.org/authors/id/I/IN/INGY/YAML-LibYAML-{{ version }}.tar.gz
+  url: https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [win]
   number: 0
+  skip: True  # [win]
   run_exports:
     weak:
       - {{ name }} ={{ version }}
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - make  # [not win]
     - m2-make  # [win]
   host:
@@ -29,15 +30,19 @@ requirements:
 
 test:
   imports:
-    - YAML::XS            # YAML::LibYAML is not imported directly
+    - YAML::XS
+    # YAML::LibYAML is not imported directly
 
 about:
-  home: https://github.com/ingydotnet/yaml-libyaml-pm
+  home: "https://github.com/ingydotnet/yaml-libyaml-pm"
   license: GPL-1.0-or-later OR Artistic-1.0-Perl
+  license_family: OTHER
   license_file:
     - {{ environ["PREFIX"] }}/man/man1/perlartistic.1
     - {{ environ["PREFIX"] }}/man/man1/perlgpl.1
-  summary: Perl YAML Serialization using XS and libyaml
+  summary: "Perl YAML Serialization using XS and libyaml."
+  dev_url: "https://github.com/ingydotnet/yaml-libyaml-pm"
+  doc_url: "https://metacpan.org/dist/YAML-LibYAML"
 
 extra:
   recipe-maintainers:
