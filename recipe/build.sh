@@ -15,7 +15,9 @@ if [[ -f Build.PL ]]; then
 elif [[ -f Makefile.PL ]]; then
     perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1 NO_PERLLOCAL=1
     make -j"${CPU_COUNT}"
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
     make test
+fi
     make install
 else
     echo 'Unable to find Build.PL or Makefile.PL. You need to modify build.sh.'
