@@ -7,6 +7,8 @@ sed -i.bak 's|v0.904.0|0.904.0|' META.*
 sed -i.bak 's|v0.904.0|0.904.0|' Makefile.PL
 rm -rf *.bak
 
+export LC_ALL="en_US.UTF-8"
+
 if [[ -f Build.PL ]]; then
     perl Build.PL
     perl ./Build
@@ -14,8 +16,8 @@ if [[ -f Build.PL ]]; then
     perl ./Build install --installdirs vendor
 elif [[ -f Makefile.PL ]]; then
     perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1 NO_PERLLOCAL=1
-    make -j"${CPU_COUNT}"
-    make test
+    make
+    make test -j"${CPU_COUNT}"
     make install
 else
     echo 'Unable to find Build.PL or Makefile.PL. You need to modify build.sh.'
