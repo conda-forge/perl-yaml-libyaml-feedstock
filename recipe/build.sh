@@ -1,10 +1,11 @@
 #!/bin/bash
 set -o errexit -o pipefail
 
-sed -i.bak 's|v0.904.0|0.904.0|' lib/YAML/*.pm
+VERSION=`grep ^version META.yml | cut -f 2- -d: | tr -d '[:space:]v'`
+sed -i.bak "s/v${VERSION}/${VERSION}/" lib/YAML/*.pm
 rm -rf lib/YAML/*.bak
-sed -i.bak 's|v0.904.0|0.904.0|' META.*
-sed -i.bak 's|v0.904.0|0.904.0|' Makefile.PL
+sed -i.bak "s/v${VERSION}/${VERSION}/" META.*
+sed -i.bak "s/v${VERSION}/${VERSION}/" Makefile.PL
 rm -rf *.bak
 
 export LC_ALL="en_US.UTF-8"
