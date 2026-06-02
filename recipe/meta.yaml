@@ -25,6 +25,7 @@ requirements:
     - m2-make  # [win]
   host:
     - perl
+    - perl-test-warnings
   run:
     - perl
 
