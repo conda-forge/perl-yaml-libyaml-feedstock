@@ -1,6 +1,6 @@
 {% set name = "perl-yaml-libyaml" %}
-{% set version = "0.909.0" %}
-{% set sha256 = "3029c8d6869648a1e9bec0635ef1f8c28cb64f5500d3ec4e0501b9fe122b40e8" %}
+{% set version = "0.910.0" %}
+{% set sha256 = "04310e9840b918383a5b9ae9ca4b3bde1b2771ec786c758bd2fffd79d409332b" %}
 
 package:
   name: {{ name }}
